@@ -1,11 +1,11 @@
-# Lab 08 — Mockito Mock Objects
+# Lab 08 — Mock объектууд — Mockito-гоор хамаарлыг орлуулж тестлэх
+
+![Maven Tests](https://github.com/Monkhtsetsen/Program-test-Lab-8/actions/workflows/test.yml/badge.svg)
 
 ## Оюутны мэдээлэл
 
-- **Оюутны нэр:** [Өөрийн нэр]
-- **Оюутны код:** [Өөрийн код]
-- **Хичээл:** F.CSA313 — Програм хангамжийн тест
-- **Лаборатори:** Lab 08 — Mockito Mock Objects
+- **Оюутны нэр:** [Түмэннасан Мөнхцэцэн]
+- **Оюутны код:** [B232270025]
 
 ## 1. Ашигласан орчин
 
@@ -26,9 +26,6 @@ Java version: 17.0.20.1, vendor: Ubuntu
 OS name: "linux", version: "6.18.54.1-microsoft-standard-wsl2"
 arch: "amd64"
 ```
-
-- **Үйлдлийн систем:** Windows 11 + WSL2 Ubuntu
-- **Төслийн Java хувилбар:** 17
 
 ## 2. Хэсэг A — Mockito тестүүд
 
@@ -112,3 +109,17 @@ Mockito mock объект нь бодит хамаарлыг орлуулж, т�
 - `mvn-test-mutant-1.txt` — Mutation 1-ийн үр дүн
 - `mvn-test-mutant-2.txt` — Mutation 2-ийн үр дүн
 - `mvn-test-mutant-3.txt` — Mutation 3-ийн үр дүн
+
+## 6. Нэмэлт даалгавар — CI (GitHub Actions)
+
+Энэ лабораторийн ажлын нэмэлт даалгаврын хүрээнд GitHub Actions ашиглан Continuous Integration (CI) тохируулсан.
+
+**Хэрэгжүүлсэн зүйлс:**
+
+- `.github/workflows/test.yml` файл үүсгэсэн.
+- GitHub repository-д `push` хийх болон `pull_request` үүсгэх бүрд workflow автоматаар ажиллахаар тохируулсан.
+- GitHub Actions орчинд Java 17 (Temurin) ашигласан.
+- Maven ашиглан `mvn -B clean test` командаар тестүүдийг автоматаар ажиллуулдаг болгосон.
+- Амжилттай ажилласан workflow-ийн төлөвийг README дээр CI badge хэлбэрээр харуулсан.
+
+**Үр дүн:** GitHub Actions дээр тестүүд амжилттай ажиллаж, CI workflow зөв ажиллаж байгааг баталгаажуулсан.
