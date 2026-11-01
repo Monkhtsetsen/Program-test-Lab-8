@@ -34,7 +34,7 @@ public class CourseRegistrationService {
 
         Student student = repository.findStudent(studentId);
         if (student == null) return "ERROR_NO_STUDENT";
-        if (!student.active()) return "ERROR_INACTIVE_STUDENT";
+        // if (!student.active()) return "ERROR_INACTIVE_STUDENT";
         if (!repository.courseExists(courseId)) return "ERROR_NO_COURSE";
 
         List<String> missing = new ArrayList<>(repository.prerequisites(courseId));
