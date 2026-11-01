@@ -34,14 +34,14 @@ public class CourseRegistrationService {
 
         Student student = repository.findStudent(studentId);
         if (student == null) return "ERROR_NO_STUDENT";
-        // if (!student.active()) return "ERROR_INACTIVE_STUDENT";
+        if (!student.active()) return "ERROR_INACTIVE_STUDENT";
         if (!repository.courseExists(courseId)) return "ERROR_NO_COURSE";
 
         List<String> missing = new ArrayList<>(repository.prerequisites(courseId));
         missing.removeAll(student.coursesTaken());
         if (!missing.isEmpty()) return "ERROR_PREREQUISITES";
 
-        repository.saveRegistration(studentId, courseId);
+        // repository.saveRegistration(studentId, courseId);
 
         try {
             emailSender.send(student.email(),

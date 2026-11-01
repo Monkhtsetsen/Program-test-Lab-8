@@ -1,0 +1,128 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36mmn.edu.must.sqat:lab08-mockito[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding lab08-mockito 1.0[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mlab08-mockito[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/unimedia/hicheel/Program-test-Lab-8/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.13.0:compile[m [1m(default-compile)[m @ [36mlab08-mockito[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged source code[m.
+[[1;34mINFO[m] Compiling 4 source files with javac [debug release 17] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:testResources[m [1m(default-testResources)[m @ [36mlab08-mockito[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/unimedia/hicheel/Program-test-Lab-8/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.13.0:testCompile[m [1m(default-testCompile)[m @ [36mlab08-mockito[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+[[1;34mINFO[m] Compiling 1 source file with javac [debug release 17] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32msurefire:3.2.5:test[m [1m(default-test)[m @ [36mlab08-mockito[0;1m ---[m
+[[1;34mINFO[m] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running mn.edu.must.sqat.[1mCourseRegistrationServiceTest[m
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m10[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 1.054 s[1;31m <<< FAILURE![m -- in mn.edu.must.sqat.[1mCourseRegistrationServiceTest[m
+[[1;31mERROR[m] mn.edu.must.sqat.CourseRegistrationServiceTest.register_activeStudent_returnsOK -- Time elapsed: 0.038 s <<< FAILURE!
+Wanted but not invoked:
+repository.saveRegistration("S001", "CS101");
+-> at mn.edu.must.sqat.CourseRegistrationServiceTest.register_activeStudent_returnsOK(CourseRegistrationServiceTest.java:65)
+
+However, there were exactly 3 interactions with this mock:
+repository.findStudent("S001");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:35)
+
+repository.courseExists("CS101");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:38)
+
+repository.prerequisites("CS101");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:40)
+
+
+	at mn.edu.must.sqat.CourseRegistrationServiceTest.register_activeStudent_returnsOK(CourseRegistrationServiceTest.java:65)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[[1;31mERROR[m] mn.edu.must.sqat.CourseRegistrationServiceTest.register_emailFails_registrationStillSucceeds -- Time elapsed: 0.008 s <<< FAILURE!
+Wanted but not invoked:
+repository.saveRegistration("S005", "CS101");
+-> at mn.edu.must.sqat.CourseRegistrationServiceTest.register_emailFails_registrationStillSucceeds(CourseRegistrationServiceTest.java:156)
+
+However, there were exactly 3 interactions with this mock:
+repository.findStudent("S005");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:35)
+
+repository.courseExists("CS101");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:38)
+
+repository.prerequisites("CS101");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:40)
+
+
+	at mn.edu.must.sqat.CourseRegistrationServiceTest.register_emailFails_registrationStillSucceeds(CourseRegistrationServiceTest.java:156)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mFailures: [m
+[[1;31mERROR[m] [1;31m  CourseRegistrationServiceTest.register_activeStudent_returnsOK:65 
+Wanted but not invoked:
+repository.saveRegistration("S001", "CS101");
+-> at mn.edu.must.sqat.CourseRegistrationServiceTest.register_activeStudent_returnsOK(CourseRegistrationServiceTest.java:65)
+
+However, there were exactly 3 interactions with this mock:
+repository.findStudent("S001");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:35)
+
+repository.courseExists("CS101");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:38)
+
+repository.prerequisites("CS101");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:40)
+
+[m
+[[1;31mERROR[m] [1;31m  CourseRegistrationServiceTest.register_emailFails_registrationStillSucceeds:156 
+Wanted but not invoked:
+repository.saveRegistration("S005", "CS101");
+-> at mn.edu.must.sqat.CourseRegistrationServiceTest.register_emailFails_registrationStillSucceeds(CourseRegistrationServiceTest.java:156)
+
+However, there were exactly 3 interactions with this mock:
+repository.findStudent("S005");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:35)
+
+repository.courseExists("CS101");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:38)
+
+repository.prerequisites("CS101");
+-> at mn.edu.must.sqat.CourseRegistrationService.register(CourseRegistrationService.java:40)
+
+[m
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mTests run: 10, Failures: 2, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  2.969 s
+[[1;34mINFO[m] Finished at: 2026-11-01T19:41:58+08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:3.2.5:test[m [1m(default-test)[m on project [36mlab08-mockito[m: [1;31mThere are test failures.[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] [1;31mPlease refer to /home/unimedia/hicheel/Program-test-Lab-8/target/surefire-reports for the individual test results.[m
+[[1;31mERROR[m] [1;31mPlease refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
