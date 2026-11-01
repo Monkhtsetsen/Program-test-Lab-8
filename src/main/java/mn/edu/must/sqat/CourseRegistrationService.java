@@ -41,7 +41,7 @@ public class CourseRegistrationService {
         missing.removeAll(student.coursesTaken());
         if (!missing.isEmpty()) return "ERROR_PREREQUISITES";
 
-        // repository.saveRegistration(studentId, courseId);
+        repository.saveRegistration(studentId, courseId);
 
         try {
             emailSender.send(student.email(),
